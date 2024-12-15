@@ -1,0 +1,29 @@
+Self Defined Steps:
+ ☐ Create a circle @self
+ ☐ Create another Circle @self
+ ☐ Draw a vector from circle 1 center (anchor) to circle 2 (point) @self
+ ☐ Scale vector @self
+ ☐ Continuously constraint the point while movint the anchor @self
+
+ChatGPT Suggested Imrpovements and Refactors:
+    Define the Distance Constraint Logic:
+      ☐ Calculate the vector between c2.pos and c1.pos.
+      ☐ Normalize this vector to a unit vector.
+      ☐ Scale it to the desired distance (equal to c1.radius).
+      ☐ Set c2.pos to c1.pos plus this scaled vector.
+    Update Position of c2 Dynamically:
+      ☐ Replace the direct assignment of c2.pos with the distance constraint logic.
+      ☐ Ensure that c2 follows c1 while maintaining the specified distance.
+    Adjust the Initial c2.pos:
+      ☐ Initialize c2.pos correctly relative to c1.pos based on the constraint logic.
+      ☐ This ensures c2 starts at the correct distance from c1.
+    Encapsulate the Constraint in a Function:
+      ☐ Create a reusable function to apply the distance constraint.
+      ☐ Pass the two Circle objects and the desired distance as parameters.
+    Include Real-Time Updates:
+      ☐ Continuously apply the distance constraint within the game loop to keep c2 positioned relative to c1.
+    Visual Validation:
+      ☐ Use DrawLineV or similar methods to draw a line between c1 and c2 to visualize the constraint during runtime.
+    Test Edge Cases:
+      ☐ Ensure the constraint holds when c1 is stationary, moving rapidly, or at screen edges.
+
